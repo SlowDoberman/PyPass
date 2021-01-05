@@ -2,7 +2,7 @@ import string
 import random
 import time
 
-path = "" #replace with your path to the password file
+path = "/home/joeblack/Dokumente/pw.txt" #replace with your path to the file
 
 # generate a randomized password
 def randompassword():
@@ -36,6 +36,7 @@ def callpw():
                 break
         else:
             print("No password found")
+            time.sleep(0.7)
         searchfile.close()
 
 
@@ -66,6 +67,9 @@ def replacepw():
             #line.replace(str(line), str(replacement))
             break
             t.close()
+        else:
+            print("No old password found to replace. To add a new one, use 'add'")
+            time.sleep(0.7)
 
 
 def getcmd(cmdlist):
@@ -79,15 +83,16 @@ def getcmd(cmdlist):
         print("\nQuit: Quit the program")
         return getcmd(cmdlist)
     elif cmd == "quit":
-        print("\n---------")
-        time.sleep(0.5)
-        print("Program is shutting down...")
-        time.sleep(0.5)
+        print("See you soon!")
+        time.sleep(0.1)
         exit()
+    else:
+        print("Thats not a command. To see avaible commands, type 'help'")
+        time.sleep(0.7)
 
 while True:
     time.sleep(0.05)
-    print("\n")
+    print("\t")
     useraction()
 
 if __name__ == "__main__":
