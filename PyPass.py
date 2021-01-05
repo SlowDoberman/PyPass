@@ -2,7 +2,7 @@ import string
 import random
 import time
 
-path = "/home/joeblack/Dokumente/pw.txt" #replace with your path to the file
+path = "" #replace with your path to the file
 
 # generate a randomized password
 def randompassword():
